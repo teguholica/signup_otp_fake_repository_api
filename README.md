@@ -1,5 +1,10 @@
 # Signup OTP Fake Repository API
 
+![CI](https://github.com/teguholica/signup_otp_fake_repository_api/workflows/CI%20Pipeline/badge.svg)
+![Coverage](https://img.shields.io/codecov/c/github/teguholica/signup_otp_fake_repository_api/master?label=coverage)
+[![codecov](https://codecov.io/gh/teguholica/signup_otp_fake_repository_api/branch/master/graph/badge.svg)](https://codecov.io/gh/teguholica/signup_otp_fake_repository_api)
+![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen)
+
 A lightweight Node.js REST API that provides user registration with email verification using OTP (One-Time Password). This project uses in-memory storage (fake repositories) for simplicity, making it perfect for development, testing, and prototyping purposes.
 
 ## 🚀 Features
