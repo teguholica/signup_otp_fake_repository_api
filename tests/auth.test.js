@@ -15,7 +15,7 @@ describe("Auth API", () => {
         expect(res.status).toBe(201);
         expect(res.body.email).toBe(email);
         expect(res.body.status).toBe("PENDING_VERIFICATION");
-        expect(res.body.otp).toHaveLength(6); // OTP dikembalikan
+        expect(res.body.otp).toHaveLength(6); // OTP is returned
         otpCode = res.body.otp;
     });
 

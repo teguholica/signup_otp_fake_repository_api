@@ -18,7 +18,7 @@ class AuthService {
     });
 
     const code = generateOtp();
-    const ttlMs = 5 * 60 * 1000; // 5 menit
+    const ttlMs = 5 * 60 * 1000; // 5 minutes
     await otpRepo.upsert(user.email, {
       code,
       expiresAt: now + ttlMs,
@@ -78,7 +78,7 @@ class AuthService {
       throw new Error("OTP_INVALID");
     }
 
-    // Berhasil
+    // Success
     await otpRepo.delete(email);
     await userRepo.update(email, {
       verifiedAt: now,

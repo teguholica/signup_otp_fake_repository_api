@@ -4,7 +4,7 @@ module.exports = {
   collectCoverageFrom: [
     "src/**/*.js",
     "!src/server.js",      // exclude entrypoint
-    "!src/app.js"          // bisa exclude file bootstrap
+    "!src/app.js"          // exclude bootstrap file
   ],
   coverageThreshold: {
     global: {

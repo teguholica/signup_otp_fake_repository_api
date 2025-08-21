@@ -33,7 +33,7 @@ describe("AuthService", () => {
 
     it("should throw OTP_EXPIRED", async () => {
         const { email } = await authService.signup({ email: "exp@example.com", password: "123456" });
-        // langsung override OTP jadi expired
+        // directly override OTP to be expired
         otpRepo.otpByEmail.set(email, { code: "123456", expiresAt: Date.now() - 1000, attempts: 0 });
         await expect(authService.verifyOtp(email, "123456")).rejects.toThrow("OTP_EXPIRED");
     });
@@ -46,7 +46,7 @@ describe("AuthService", () => {
 
     it("should throw OTP_NOT_FOUND if no OTP requested", async () => {
         const { email } = await authService.signup({ email: "nootp@example.com", password: "123456" });
-        // langsung hapus OTP biar null
+        // directly delete OTP to make it null
         otpRepo.delete(email);
         await expect(authService.verifyOtp(email, "123456")).rejects.toThrow("OTP_NOT_FOUND");
     });
